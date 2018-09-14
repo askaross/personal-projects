@@ -1,6 +1,7 @@
 
 # coding: utf-8
 
+#Class for single Binary Search Node
 class BSNode():
     def __init__(self, key):
         self.key = key
@@ -8,6 +9,7 @@ class BSNode():
         self.left_child = None
         self.right_child = None
     
+    #Searches for a specific element
     def search(self, key):
         if key is None:
             raise ValueError('None is not a valid key')
@@ -25,12 +27,14 @@ class BSNode():
             else:
                 raise ValueError('Key not in the BST')
     
+    #Finds the minimum element of the BST
     def find_min(self):
         if self.left_child is None:
             return self
         else:
             return self.left_child.find_min()
-        
+    
+    #Finds the next largest element of the head
     def next_larger(self):
 
         if self.right_child:
@@ -46,6 +50,7 @@ class BSNode():
             
             return ValueError('No larger element')
     
+    #Inserts a new element into the BST
     def insert(self, key):
         new_node = BSNode(key)
         
@@ -68,6 +73,7 @@ class BSNode():
                 else:
                     current = current.left_child
     
+    #Deletes the head of the BST
     def delete(self):
         if self.right_child is None or self.left_child is None:
 
