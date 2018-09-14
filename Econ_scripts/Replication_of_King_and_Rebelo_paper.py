@@ -4,7 +4,6 @@
 # # Data Import
 # The choice of data was guided by Stock and Watson (1998) and obtained via the Fred api
 
-# In[131]:
 
 from fredapi import Fred
 import pandas as pd
@@ -36,8 +35,6 @@ pop = fr.get_series('B230RC0Q173SBEA') * 1000   #Population (midperiod), Thousan
 # # Converting Data to Correct Format
 # 
 # Converting all data into Quarterly time series and in the correct format for the years 1947 - 1996 (same time horizon described in King and Rebelo (2000)) 
-
-# In[134]:
 
 
 
@@ -80,8 +77,6 @@ A = convert_to_quarterly(A)                                     #Real factor pro
 
 # # Table Replication
 
-# In[135]:
-
 
 table_1_data = pd.concat([np.log(pd.concat([Y, C, I, N, Y.divide(N), w, A], axis=1)), r], axis=1)
 table_1_data.columns = ['Y', 'C', 'I', 'N', 'Y/N', 'w', 'A', 'r'] 
@@ -102,7 +97,6 @@ def table_1_replicator(data):
 
 # ### Table 1, HP Filtered with log values
 
-# In[136]:
 
 table_1 = table_1_replicator(cycle*100).round(decimals=2)
 table_1
@@ -110,18 +104,8 @@ table_1
 
 # ### Table 1, with first order difference and log values
 
-# In[137]:
 
 table_1_diff = table_1_replicator(diff*100).round(decimals=2)
 table_1_diff
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
 
 
