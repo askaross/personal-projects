@@ -1,8 +1,6 @@
 
 # coding: utf-8
 
-# In[43]:
-
 class BSNode():
     def __init__(self, key):
         self.key = key
@@ -93,31 +91,6 @@ class BSNode():
             replacement = self.next_larger()
             self.key = replacement.key
             return replacement.delete()
-                
-
-
-# In[44]:
-
-node1 = BSNode(11)
-node1.insert(10)
-node1.insert(12)
-node1.insert(11.5)
-node1.insert(12.5)
-node1.insert(10.5)
-node1.insert(9.5)
-
-
-# In[45]:
-
-node1.delete()
-
-
-# In[46]:
-
-node1.key
-
-
-# In[ ]:
-
+         
 
 
